@@ -1,24 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="el9-V6-xMM">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="9gj-Uf-CFL">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="el9-V6-xMM" customClass="ViewController" customModule="PersonAndChildren" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lag-a8-Zjk">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Персональные данные" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR3-5T-bgs">
+                                <rect key="frame" x="20" y="94" width="218" height="27"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yrN-Oz-gGk">
+                                <rect key="frame" x="20" y="141" width="388" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Htz-og-WPy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Возраст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TVk-Xv-P83">
+                                <rect key="frame" x="20" y="201" width="388" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="e2Q-cr-eLe">
+                                <rect key="frame" x="0.0" y="321" width="428" height="431"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="164" id="cCX-Jj-z3n">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="164"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cCX-Jj-z3n" id="2r6-Gm-nAD">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="164"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iLb-aj-3EH">
+                                                    <rect key="frame" x="20" y="31" width="218" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="H44-fi-iu3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Возраст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eR9-xo-CGt">
+                                                    <rect key="frame" x="20" y="91" width="218" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svr-BP-k4Y">
+                                                    <rect key="frame" x="258" y="31" width="150" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="sYw-L3-lYq"/>
+                                                        <constraint firstAttribute="height" constant="40" id="wZd-Bl-mrq"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemPinkColor"/>
+                                                    <buttonConfiguration key="configuration" style="gray" title="   Удалить" cornerStyle="capsule">
+                                                        <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eR9-xo-CGt" firstAttribute="trailing" secondItem="iLb-aj-3EH" secondAttribute="trailing" id="AdE-HJ-Lde"/>
+                                                <constraint firstItem="eR9-xo-CGt" firstAttribute="top" secondItem="iLb-aj-3EH" secondAttribute="bottom" constant="20" id="BrH-lB-pF8"/>
+                                                <constraint firstItem="iLb-aj-3EH" firstAttribute="top" secondItem="2r6-Gm-nAD" secondAttribute="topMargin" constant="20" id="MWj-mK-lYH"/>
+                                                <constraint firstItem="Svr-BP-k4Y" firstAttribute="centerY" secondItem="iLb-aj-3EH" secondAttribute="centerY" id="UWS-OJ-jBw"/>
+                                                <constraint firstItem="Svr-BP-k4Y" firstAttribute="leading" secondItem="iLb-aj-3EH" secondAttribute="trailing" constant="20" id="ZXD-zo-ZqP"/>
+                                                <constraint firstItem="eR9-xo-CGt" firstAttribute="height" secondItem="iLb-aj-3EH" secondAttribute="height" id="aHX-FR-VUT"/>
+                                                <constraint firstItem="eR9-xo-CGt" firstAttribute="width" secondItem="iLb-aj-3EH" secondAttribute="width" id="gAW-Q3-TTz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Svr-BP-k4Y" secondAttribute="trailing" id="ocZ-FF-Pvf"/>
+                                                <constraint firstItem="eR9-xo-CGt" firstAttribute="leading" secondItem="2r6-Gm-nAD" secondAttribute="leadingMargin" id="qZY-Um-mxr"/>
+                                                <constraint firstItem="iLb-aj-3EH" firstAttribute="leading" secondItem="2r6-Gm-nAD" secondAttribute="leadingMargin" id="wBu-mU-OSs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дети (макс. 5)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ru-X9-DEy">
+                                <rect key="frame" x="20" y="267.66666666666669" width="132" height="27"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="P4d-Qg-rPE">
+                                <rect key="frame" x="208" y="261" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3jL-dE-xuT"/>
+                                    <constraint firstAttribute="width" constant="200" id="xDV-Q6-xxU"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="tinted" title="   Добавить ребёнка" subtitle="" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMB-Ih-8FX">
+                                <rect key="frame" x="114" y="802" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="axx-MC-rzT"/>
+                                    <constraint firstAttribute="width" constant="200" id="bya-8G-lyJ"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <buttonConfiguration key="configuration" style="gray" title="   Очистить" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kca-b4-3cJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P4d-Qg-rPE" firstAttribute="top" secondItem="TVk-Xv-P83" secondAttribute="bottom" constant="20" id="6tt-rI-jNY"/>
+                            <constraint firstItem="TVk-Xv-P83" firstAttribute="leading" secondItem="kca-b4-3cJ" secondAttribute="leading" constant="20" id="AzD-lC-wFD"/>
+                            <constraint firstItem="e2Q-cr-eLe" firstAttribute="trailing" secondItem="lag-a8-Zjk" secondAttribute="trailing" id="CSm-qP-fG8"/>
+                            <constraint firstItem="yrN-Oz-gGk" firstAttribute="top" secondItem="TR3-5T-bgs" secondAttribute="bottom" constant="20" id="Fbt-D3-Wt5"/>
+                            <constraint firstItem="KMB-Ih-8FX" firstAttribute="top" secondItem="e2Q-cr-eLe" secondAttribute="bottom" constant="50" id="Mmn-dJ-S3c"/>
+                            <constraint firstItem="8Ru-X9-DEy" firstAttribute="centerY" secondItem="P4d-Qg-rPE" secondAttribute="centerY" id="P4J-96-m2f"/>
+                            <constraint firstItem="e2Q-cr-eLe" firstAttribute="leading" secondItem="lag-a8-Zjk" secondAttribute="leading" id="Pb9-b1-tN3"/>
+                            <constraint firstItem="TR3-5T-bgs" firstAttribute="leading" secondItem="kca-b4-3cJ" secondAttribute="leading" constant="20" id="Pxz-iL-Pxy"/>
+                            <constraint firstItem="kca-b4-3cJ" firstAttribute="trailing" secondItem="P4d-Qg-rPE" secondAttribute="trailing" constant="20" id="RtR-ab-Z5f"/>
+                            <constraint firstItem="KMB-Ih-8FX" firstAttribute="centerX" secondItem="kca-b4-3cJ" secondAttribute="centerX" id="Zmv-Mk-QoK"/>
+                            <constraint firstItem="kca-b4-3cJ" firstAttribute="trailing" secondItem="yrN-Oz-gGk" secondAttribute="trailing" constant="20" id="ZrC-bA-kff"/>
+                            <constraint firstItem="yrN-Oz-gGk" firstAttribute="leading" secondItem="kca-b4-3cJ" secondAttribute="leading" constant="20" id="ckJ-EQ-OeA"/>
+                            <constraint firstItem="TVk-Xv-P83" firstAttribute="top" secondItem="yrN-Oz-gGk" secondAttribute="bottom" constant="20" id="esh-qn-Sz8"/>
+                            <constraint firstItem="TVk-Xv-P83" firstAttribute="height" secondItem="yrN-Oz-gGk" secondAttribute="height" id="g6R-Wm-QUU"/>
+                            <constraint firstItem="P4d-Qg-rPE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Ru-X9-DEy" secondAttribute="trailing" constant="20" id="gXR-vv-vfa"/>
+                            <constraint firstItem="e2Q-cr-eLe" firstAttribute="top" secondItem="P4d-Qg-rPE" secondAttribute="bottom" constant="20" id="hri-R1-Mj8"/>
+                            <constraint firstItem="kca-b4-3cJ" firstAttribute="bottom" secondItem="KMB-Ih-8FX" secondAttribute="bottom" constant="50" id="kOr-Fh-bSx"/>
+                            <constraint firstItem="TR3-5T-bgs" firstAttribute="top" secondItem="kca-b4-3cJ" secondAttribute="top" constant="50" id="lNe-L6-Pk5"/>
+                            <constraint firstItem="kca-b4-3cJ" firstAttribute="trailing" secondItem="TVk-Xv-P83" secondAttribute="trailing" constant="20" id="p2R-lq-ORF"/>
+                            <constraint firstItem="kca-b4-3cJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TR3-5T-bgs" secondAttribute="trailing" constant="20" id="pFR-yV-T8C"/>
+                            <constraint firstItem="8Ru-X9-DEy" firstAttribute="leading" secondItem="kca-b4-3cJ" secondAttribute="leading" constant="20" id="vtv-NZ-s64"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tea-RN-QG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-36.231884057971016" y="80.357142857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
