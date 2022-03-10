@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     @IBAction func addChild(_ sender: UIButton) {
         tv.tvHelper.children.append(Child())
+        tableView.reloadData()
     }
     
     @IBAction func clearChildren(_ sender: UIButton) {
