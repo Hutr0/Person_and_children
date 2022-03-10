@@ -65,4 +65,16 @@ class ViewControllerTests: XCTestCase {
         sut.clearChildren(UIButton())
         XCTAssertEqual(sut.tv.tvHelper.children.count, 0)
     }
+    
+    func testWhenNameEditingChangedWasTappedNameOfPersonIsSet() {
+        sut.nameTF.text = "Имя"
+        sut.addChild(UIButton())
+        XCTAssertEqual(sut.nameTF.text, "Имя")
+    }
+    
+    func testWhenAgeEditingChangedWasTappedAgeOfPersonIsSet() {
+        sut.ageTF.text = "Возраст"
+        sut.addChild(UIButton())
+        XCTAssertEqual(sut.ageTF.text, "Возраст")
+    }
 }
