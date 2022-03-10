@@ -30,19 +30,21 @@ class ViewController: UIViewController {
     
     @IBAction func clearChildren(_ sender: UIButton) {
         tv.tvHelper.children.removeAll()
-        tableView.reloadData()
+        nameTF.text = ""
+        ageTF.text = ""
+        self.tableView.reloadData()
     }
     
     @IBAction func nameEditingChanged(_ sender: UITextField) {
-        guard let text = self.nameTF.text else { return }
-        
-        vHelper.person.name = text
+            guard let text = self.nameTF.text else { return }
+            
+            vHelper.person.name = text
     }
     
     @IBAction func ageEditingChanged(_ sender: UITextField) {
-        guard let text = self.ageTF.text else { return }
-        
-        vHelper.person.age = text
+            guard let text = self.ageTF.text else { return }
+            
+            vHelper.person.age = text
     }
 }
 
