@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let tv = TableView()
+    let vHelper = ViewHelper()
     
     @IBOutlet weak var tableView: UITableView!
     

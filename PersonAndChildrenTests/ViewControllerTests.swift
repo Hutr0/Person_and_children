@@ -31,6 +31,10 @@ class ViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.tv)
     }
     
+    func testWhenViewIsLoadedvHelperIsNotNil() {
+        XCTAssertNotNil(sut.vHelper)
+    }
+    
     func testWhenViewIsLoadedTableViewIsNotNil() {
         XCTAssertNotNil(sut.tableView)
     }
