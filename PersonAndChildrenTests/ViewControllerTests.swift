@@ -82,4 +82,27 @@ class ViewControllerTests: XCTestCase {
         sut.addChild(UIButton())
         XCTAssertEqual(sut.ageTF.text, "Возраст")
     }
+    
+    func testWhenAddedFiveChildrenAddButtonIsInactive() {
+        XCTAssertTrue(sut.addButton.isEnabled)
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        
+        XCTAssertTrue(!sut.addButton.isEnabled)
+    }
+    
+    func testWhenClearedAddButtonIsActive() {
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        XCTAssertTrue(!sut.addButton.isEnabled)
+        
+        sut.clearChildren(UIButton())
+        XCTAssertTrue(sut.addButton.isEnabled)
+    }
 }

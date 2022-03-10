@@ -88,4 +88,19 @@ class TableViewCellTests: XCTestCase {
         XCTAssertEqual(cell?.age.text, "")
         XCTAssertEqual(cell?.indexPath, IndexPath(row: 0, section: 0))
     }
+    
+    func testWhenFiveChildrenLostOneAddButtonOnViewControllerIsActive() {
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        XCTAssertTrue(!sut.addButton.isEnabled)
+        
+        var cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TableViewCell
+        cell?.vc = sut
+        
+        cell?.removeChild(UIButton())
+        XCTAssertTrue(sut.addButton.isEnabled)
+    }
 }

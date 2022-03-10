@@ -169,6 +169,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="P4d-Qg-rPE" id="MSw-U9-2Du"/>
                         <outlet property="ageTF" destination="TVk-Xv-P83" id="din-os-evN"/>
                         <outlet property="nameTF" destination="yrN-Oz-gGk" id="xJi-db-xjb"/>
                         <outlet property="tableView" destination="e2Q-cr-eLe" id="LrR-0U-dwl"/>

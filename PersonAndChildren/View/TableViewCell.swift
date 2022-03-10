@@ -19,6 +19,9 @@ class TableViewCell: UITableViewCell {
         
         vc.tv.tvHelper.isDeleting = true
         vc.tv.tvHelper.children.remove(at: indexPath.row)
+        if vc.tv.tvHelper.children.count < 5 {
+            vc.addButton.isEnabled = true
+        }
         DispatchQueue.main.async {
             self.vc.tableView.reloadData()
             self.vc.tv.tvHelper.isDeleting = false
