@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="9gj-Uf-CFL">
             <objects>
-                <viewController id="el9-V6-xMM" customClass="ViewController" customModule="PersonAndChildren" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="el9-V6-xMM" customClass="ViewController" customModule="PersonAndChildren" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lag-a8-Zjk">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

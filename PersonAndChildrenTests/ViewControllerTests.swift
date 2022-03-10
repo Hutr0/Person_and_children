@@ -23,7 +23,8 @@ class ViewControllerTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        
+        sut = nil
+        try super.tearDownWithError()
     }
     
     func testWhenViewIsLoadedTvIsNotNil() {
@@ -34,7 +35,30 @@ class ViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.tableView)
     }
     
-    func testTableViewDelegateIsTv() {
+    func testWhenViewIsLoadedTableViewDelegateIsSet() {
         XCTAssertTrue(sut.tableView.delegate is TableView)
+    }
+    
+    func testWhenViewIsLoadedTableViewDataSourceIsSet() {
+        XCTAssertTrue(sut.tableView.dataSource is TableView)
+    }
+    
+    func testWhenViewIsLoadedTableViewDelegateAndTableViewDataSourceIsSet() {
+        XCTAssertEqual(sut.tableView.dataSource as? TableView,
+                       sut.tableView.delegate as? TableView)
+    }
+    
+    func testWhenAddChildWasPressedChildrenAddIntoArray() {
+        XCTAssertEqual(sut.tv.tvHelper.children.count, 0)
+        sut.addChild(UIButton())
+        XCTAssertEqual(sut.tv.tvHelper.children.count, 1)
+    }
+    
+    func testWhenClearCildrenWasPressedAllChildrenWasRemoved() {
+        sut.addChild(UIButton())
+        sut.addChild(UIButton())
+        XCTAssertEqual(sut.tv.tvHelper.children.count, 2)
+        sut.clearChildren(UIButton())
+        XCTAssertEqual(sut.tv.tvHelper.children.count, 0)
     }
 }
