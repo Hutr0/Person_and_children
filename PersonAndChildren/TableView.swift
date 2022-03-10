@@ -7,25 +7,24 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
-
-    // MARK: - Table view data source
+class TableView: UITableViewController {
+    
+    let tvHelper = TableViewHelper()
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tvHelper.children.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! TableViewCell
 
-//         Configure the cell...
-
+        cell.name.text = tvHelper.children[indexPath.row].name
+        cell.age.text = tvHelper.children[indexPath.row].age
+        
         return cell
     }
 }

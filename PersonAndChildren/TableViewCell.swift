@@ -8,4 +8,9 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var age: UITextField!
+    
+//    @IBAction func deleteChild(_ sender: UIButton) {
+//    }
 }
