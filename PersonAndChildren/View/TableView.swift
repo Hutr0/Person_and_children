@@ -22,6 +22,7 @@ class TableView: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! TableViewCell
 
+        cell.indexPath = indexPath
         cell.name.text = tvHelper.children[indexPath.row].name
         cell.age.text = tvHelper.children[indexPath.row].age
         

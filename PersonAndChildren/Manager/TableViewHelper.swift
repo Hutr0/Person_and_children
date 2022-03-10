@@ -8,15 +8,6 @@
 import Foundation
 
 class TableViewHelper {
+    var isDeleting = false
     var children: [Child] = []
-}
-
-struct Child {
-    var name: String
-    var age: String
-    
-    init(name: String = "", age: String = "") {
-        self.name = name
-        self.age = age
-    }
 }
