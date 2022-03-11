@@ -9,15 +9,11 @@ import UIKit
 
 class TableViewCellManager {
     
-    var vc: ViewController!
-    lazy var tvm = vc.vm.tv.tvm
-    init() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: ViewController.self))
-        self.vc = vc as? ViewController
-    }
+    var vc: ViewController! 
     
     func removeChild(on indexPath: IndexPath) {
+        let tvm = vc.vm.tv.tvm
+        
         tvm.isDeleting = true
         tvm.children.remove(at: indexPath.row)
         if tvm.children.count < 5 {
@@ -25,18 +21,24 @@ class TableViewCellManager {
         }
         DispatchQueue.main.async {
             self.vc.tableView.reloadData()
-            self.tvm.isDeleting = false
+            tvm.isDeleting = false
         }
     }
     
-    func nameEditingChanged(on indexPath: IndexPath, with text: String) {
+    func nameEditingChanged(on indexPath: IndexPath, with text: String?) {
+        let tvm = vc.vm.tv.tvm
+        
         if !tvm.isDeleting {
+            guard let text = text else { return }
             tvm.children[indexPath.row].name = text
         }
     }
     
-    func ageEditingChanged(on indexPath: IndexPath, with text: String) {
+    func ageEditingChanged(on indexPath: IndexPath, with text: String?) {
+        let tvm = vc.vm.tv.tvm
+        
         if !tvm.isDeleting {
+            guard let text = text else { return }
             tvm.children[indexPath.row].age = text
         }
     }

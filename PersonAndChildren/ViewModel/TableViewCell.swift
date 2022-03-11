@@ -9,6 +9,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    lazy var vc = window?.rootViewController as? ViewController
     let tvcm = TableViewCellManager()
     
     var indexPath: IndexPath!
@@ -17,16 +18,17 @@ class TableViewCell: UITableViewCell {
     
     @IBAction func removeChild(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
+        tvcm.vc = vc
         tvcm.removeChild(on: indexPath)
     }
     
     @IBAction func nameEditingChanged(_ sender: UITextField) {
-        guard let indexPath = indexPath, let text = self.name.text else { return }
-        tvcm.nameEditingChanged(on: indexPath, with: text)
+        tvcm.vc = vc
+        tvcm.nameEditingChanged(on: indexPath, with: name.text)
     }
 
     @IBAction func ageEditingChanged(_ sender: UITextField) {
-        guard let indexPath = indexPath, let text = self.age.text else { return }
-        tvcm.ageEditingChanged(on: indexPath, with: text)
+        tvcm.vc = vc
+        tvcm.ageEditingChanged(on: indexPath, with: age.text)
     }
 }
