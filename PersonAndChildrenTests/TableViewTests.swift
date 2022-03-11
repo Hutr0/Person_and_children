@@ -31,7 +31,7 @@ class TableViewTests: XCTestCase {
     }
     
     func testWhenTableViewIsLoadedTvHelperIsNotNil() {
-        XCTAssertNotNil(vc.tv.tvHelper)
+        XCTAssertNotNil(vc.vm.tv.tvm)
     }
     
     func testCountOfSection() {

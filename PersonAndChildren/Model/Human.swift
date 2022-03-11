@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Child {
+struct Human {
     var name: String
     var age: String
     

@@ -28,11 +28,11 @@ class ViewControllerTests: XCTestCase {
     }
     
     func testWhenViewIsLoadedTvIsNotNil() {
-        XCTAssertNotNil(sut.tv)
+        XCTAssertNotNil(sut.vm.tv)
     }
     
     func testWhenViewIsLoadedvHelperIsNotNil() {
-        XCTAssertNotNil(sut.vHelper)
+        XCTAssertNotNil(sut.vm)
     }
     
     func testWhenViewIsLoadedTableViewIsNotNil() {
@@ -53,9 +53,9 @@ class ViewControllerTests: XCTestCase {
     }
     
     func testWhenAddChildWasPressedChildrenAddIntoArray() {
-        XCTAssertEqual(sut.tv.tvHelper.children.count, 0)
+        XCTAssertEqual(sut.vm.tv.tvm.children.count, 0)
         sut.addChild(UIButton())
-        XCTAssertEqual(sut.tv.tvHelper.children.count, 1)
+        XCTAssertEqual(sut.vm.tv.tvm.children.count, 1)
     }
     
 //    func testWhenClearCildrenWasPressedAllChildrenWasRemoved() {

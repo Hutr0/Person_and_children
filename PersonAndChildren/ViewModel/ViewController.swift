@@ -9,8 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let tv = TableView()
-    let vHelper = ViewHelper()
+    let vm = ViewManager()
     
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var ageTF: UITextField!
@@ -19,49 +18,38 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = tv
-        tableView.dataSource = tv
+        vm.setTableViewDelegateAndDataSource(to: tableView)
     }
     
     @IBAction func addChild(_ sender: UIButton) {
-        tv.tvHelper.children.append(Child())
-        tableView.reloadData()
-        
-        if tableView.numberOfRows(inSection: 0) >= 5 {
-            addButton.isEnabled = false
+        vm.addChild {
+            self.tableView.reloadData()
+            if self.tableView.numberOfRows(inSection: 0) >= 5 {
+                self.addButton.isEnabled = false
+            }
         }
     }
     
     @IBAction func clearChildren(_ sender: UIButton) {
-        let ac = UIAlertController(title: "Сброс", message: "Сбросить все данные?", preferredStyle: .actionSheet)
-        
-        let okButton = UIAlertAction(title: "Сбросить данные", style: .destructive) { action in
-            self.tv.tvHelper.children.removeAll()
+        let ac = vm.createAnAlert {
+            self.vm.removeAllChildren()
             self.nameTF.text = ""
             self.ageTF.text = ""
             
             self.tableView.reloadData()
             self.addButton.isEnabled = true
         }
-        let cancelButton = UIAlertAction(title: "Отмена", style: .default, handler: nil)
-        
-        ac.addAction(okButton)
-        ac.addAction(cancelButton)
-        
         present(ac, animated: true, completion: nil)
     }
     
     @IBAction func nameEditingChanged(_ sender: UITextField) {
             guard let text = self.nameTF.text else { return }
-            
-            vHelper.person.name = text
+            vm.person.name = text
     }
     
     @IBAction func ageEditingChanged(_ sender: UITextField) {
             guard let text = self.ageTF.text else { return }
-            
-            vHelper.person.age = text
+            vm.person.age = text
     }
 }
 

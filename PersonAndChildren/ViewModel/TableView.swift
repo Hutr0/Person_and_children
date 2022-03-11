@@ -9,22 +9,20 @@ import UIKit
 
 class TableView: UITableViewController {
     
-    let tvHelper = TableViewHelper()
+    let tvm = TableViewManager()
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tvHelper.children.count
+        return tvm.children.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! TableViewCell
 
-        cell.indexPath = indexPath
-        cell.name.text = tvHelper.children[indexPath.row].name
-        cell.age.text = tvHelper.children[indexPath.row].age
+        tvm.configure(of: cell, indexPath: indexPath)
         
         return cell
     }

@@ -30,46 +30,46 @@ class TableViewCellTests: XCTestCase {
     
     func testWhenRemoveChildWasPressedElementOfChildrenArrayWasRemoved() {
         sut.addChild(UIButton())
-        XCTAssertEqual(sut.tv.tvHelper.children.count, 1)
+        XCTAssertEqual(sut.vm.tv.tvm.children.count, 1)
         
         let cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TableViewCell
-        cell?.vc = sut
+        cell?.tvcm.vc = sut
         cell?.removeChild(UIButton())
         
-        XCTAssertEqual(sut.tv.tvHelper.children.count, 0)
+        XCTAssertEqual(sut.vm.tv.tvm.children.count, 0)
     }
     
     func testWhenNameEditingChangedWasTappedNameOfChildInArrayIsSet() {
         sut.addChild(UIButton())
-        XCTAssertEqual(sut.tv.tvHelper.children.count, 1)
+        XCTAssertEqual(sut.vm.tv.tvm.children.count, 1)
         
         let cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TableViewCell
-        cell?.vc = sut
+        cell?.tvcm.vc = sut
         cell?.name.text = "Имя"
         cell?.nameEditingChanged((cell?.name)!)
         
-        XCTAssertEqual(sut.tv.tvHelper.children[0].name, "Имя")
+        XCTAssertEqual(sut.vm.tv.tvm.children[0].name, "Имя")
     }
     
     func testWhenAgeEditingChangedWasTappedAgeOfChildInArrayIsSet() {
         sut.addChild(UIButton())
-        XCTAssertEqual(sut.tv.tvHelper.children.count, 1)
+        XCTAssertEqual(sut.vm.tv.tvm.children.count, 1)
         
         let cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TableViewCell
-        cell?.vc = sut
+        cell?.tvcm.vc = sut
         cell?.age.text = "Возраст"
         cell?.ageEditingChanged((cell?.age)!)
         
-        XCTAssertEqual(sut.tv.tvHelper.children[0].age, "Возраст")
+        XCTAssertEqual(sut.vm.tv.tvm.children[0].age, "Возраст")
     }
     
     func testWhenViewIsLoadedParametersFromArrayIsSet() {
         sut.addChild(UIButton())
         sut.addChild(UIButton())
-        XCTAssertEqual(sut.tv.tvHelper.children.count, 2)
+        XCTAssertEqual(sut.vm.tv.tvm.children.count, 2)
         
         var cell = sut.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? TableViewCell
-        cell?.vc = sut
+        cell?.tvcm.vc = sut
         cell?.age.text = "Возраст"
         cell?.ageEditingChanged((cell?.age)!)
         cell?.name.text = "Имя"
@@ -98,7 +98,7 @@ class TableViewCellTests: XCTestCase {
         XCTAssertTrue(!sut.addButton.isEnabled)
         
         let cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TableViewCell
-        cell?.vc = sut
+        cell?.tvcm.vc = sut
         
         cell?.removeChild(UIButton())
         XCTAssertTrue(sut.addButton.isEnabled)
