@@ -132,6 +132,7 @@
 				E07EF91627DA843800A9BD2B /* Manager */,
 				E07EF91427DA83A700A9BD2B /* Model */,
 				E07EF91527DA840800A9BD2B /* View */,
+				E0A6F1AE27DB1EC4007B831D /* ViewModel */,
 				E07EF91127DA837900A9BD2B /* Supporting files */,
 			);
 			path = PersonAndChildren;
@@ -195,6 +196,13 @@
 				E07EF90F27DA5F9800A9BD2B /* TableViewHelper.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		E0A6F1AE27DB1EC4007B831D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

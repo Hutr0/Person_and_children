@@ -34,11 +34,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clearChildren(_ sender: UIButton) {
-        tv.tvHelper.children.removeAll()
-        nameTF.text = ""
-        ageTF.text = ""
-        self.tableView.reloadData()
-        addButton.isEnabled = true
+        let ac = UIAlertController(title: "Сброс", message: "Сбросить все данные?", preferredStyle: .actionSheet)
+        
+        let okButton = UIAlertAction(title: "Сбросить данные", style: .destructive) { action in
+            self.tv.tvHelper.children.removeAll()
+            self.nameTF.text = ""
+            self.ageTF.text = ""
+            
+            self.tableView.reloadData()
+            self.addButton.isEnabled = true
+        }
+        let cancelButton = UIAlertAction(title: "Отмена", style: .default, handler: nil)
+        
+        ac.addAction(okButton)
+        ac.addAction(cancelButton)
+        
+        present(ac, animated: true, completion: nil)
     }
     
     @IBAction func nameEditingChanged(_ sender: UITextField) {

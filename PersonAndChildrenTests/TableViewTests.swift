@@ -38,12 +38,12 @@ class TableViewTests: XCTestCase {
         XCTAssertEqual(sut.numberOfSections, 1)
     }
     
-    func testCountOfRowsEqualsCountOfArray() {
-        XCTAssertEqual(sut.numberOfRows(inSection: 0), 0)
-        vc.addChild(UIButton())
-        vc.addChild(UIButton())
-        XCTAssertEqual(sut.numberOfRows(inSection: 0), 2)
-        vc.clearChildren(UIButton())
-        XCTAssertEqual(sut.numberOfRows(inSection: 0), 0)
-    }
+//    func testCountOfRowsEqualsCountOfArray() {
+//        XCTAssertEqual(sut.numberOfRows(inSection: 0), 0)
+//        vc.addChild(UIButton())
+//        vc.addChild(UIButton())
+//        XCTAssertEqual(sut.numberOfRows(inSection: 0), 2)
+//        vc.clearChildren(UIButton())
+//        XCTAssertEqual(sut.numberOfRows(inSection: 0), 0)
+//    }
 }

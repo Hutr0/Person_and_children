@@ -97,7 +97,7 @@ class TableViewCellTests: XCTestCase {
         sut.addChild(UIButton())
         XCTAssertTrue(!sut.addButton.isEnabled)
         
-        var cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TableViewCell
+        let cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TableViewCell
         cell?.vc = sut
         
         cell?.removeChild(UIButton())
